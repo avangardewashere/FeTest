@@ -1,0 +1,53 @@
+.header{
+	display: flex;
+	background:#00a6ff;
+    width: 390rem;
+	padding:15rem;
+	height:40rem;
+	align-items: center;
+	gap:8rem;
+	color:white;
+	img{
+		width:20.8rem;
+		height:20.8rem;
+		filter: brightness(1000%);
+	
+	}
+	span{
+		font-size:14rem;
+	}
+	b{
+		position: absolute;
+		right:20rem;
+		font-size: 24rem;
+		top:0rem;
+		font-weight: 400;
+		
+	}
+	span:last-child{
+		width: 36rem;;
+		border-radius: 12rem;
+		border:white solid .5rem;
+		line-height:6rem;
+		
+		height: 16rem;
+		font-size:12rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	    
+	
+	 
+	}
+}
+
+.list{
+	height:532rem;
+	padding:12rem;
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	align-content: flex-start;
+	gap:10rem 14rem;
+}

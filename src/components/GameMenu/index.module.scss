@@ -1,0 +1,16 @@
+.container{
+	width:390rem;
+	margin-inline:auto;
+	display:flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap:8rem 0rem;
+	padding-inline:15rem;
+	min-height:480rem;
+	overflow:auto;
+	background:white;
+	 padding-block:0 10rem;
+	&::-webkit-scrollbar{
+		display:none;
+	}
+}

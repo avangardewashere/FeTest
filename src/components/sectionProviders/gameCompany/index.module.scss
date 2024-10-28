@@ -1,0 +1,24 @@
+.logo{
+	width:116rem;
+	height:52rem;
+	background: #88888820;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 6rem;
+	border-bottom-left-radius:0 ;
+	border-bottom-right-radius:0 ;
+
+}
+
+.name{
+	height:36rem;
+	background: #88888810;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	border-radius: 0rem;
+	border-bottom-left-radius:6rem ;
+	border-bottom-right-radius:6rem ;
+}

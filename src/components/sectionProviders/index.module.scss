@@ -1,0 +1,25 @@
+.container{
+	padding-block:20rem 4rem;
+	width: 390rem;
+	height:240rem;
+	background:white;
+	padding-block:0 80rem;
+	display:flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+	padding-inline:15rem;
+	.title{
+		width:360rem;
+		margin:inline;
+		text-align: start;
+		font-size:16rem;
+		font-weight: 600;
+		color:#888;
+		margin-block:10rem;
+	}
+	.groups{
+		display:flex;
+		gap:6rem
+	}
+}

@@ -1,0 +1,46 @@
+.tabs {
+  width: 78rem;
+  height: 60rem;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4rem;
+  color: #888;
+  .imgWrapper {
+    width: 30rem;
+    height: 30rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .image {
+    width: 20rem;
+    height: 20rem;
+    // background: #00A6FF;
+    // border-radius: 50%
+    content: " ";
+    // filter:grayscale(100%)
+  }
+  span {
+    width: 45rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+.tabs:nth-child(4) {
+  img {
+    width: 20rem;
+    height: 16rem;
+  }
+}
+
+.tabs:nth-child(4) {
+  img.girl {
+    width: 20rem;
+    height: 20rem !important;
+  }
+}

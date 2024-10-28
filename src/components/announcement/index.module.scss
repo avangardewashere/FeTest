@@ -1,0 +1,41 @@
+.container{
+	display:flex;
+	align-items: center;
+	gap:10rem;
+	width:360rem;
+	margin-inline:15rem;
+    line-height: 0rem;
+	height:12rem;
+	.image{
+		width:16rem;
+		height: 16rem;
+		background:url("./../../assets/images/announcement/bell.png")  no-repeat;
+		background-size: 100% 100%;
+		border-radius: 50%;content:" ";
+	}
+}
+.marquee  {
+	width: 340rem;;        /* Adjust width as needed */
+	overflow: hidden;
+	white-space: nowrap;
+	position: relative;
+	// background:red;
+  }
+ 
+  .marqueeText {
+	display: inline-block;
+	animation: scrollText 12s linear infinite;
+	// background:blue;
+
+  }
+  
+
+ 
+@keyframes scrollText {
+	from {
+	  transform: translateX(-100%); /* Start text off-screen */
+	}
+	to {
+	  transform: translateX(100%); /* Move text left across container */
+	}
+  }
