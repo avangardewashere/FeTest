@@ -22,10 +22,10 @@ function generateColorFromId(gameId:number): string {
 	  hash = gameId.toString().charCodeAt(i) + ((hash << 5) - hash);
 	}
   
-	// Generate darker HSL color from the hash
-	const hue = Math.abs(hash) % 360;             // hue between 0 and 359
-	const saturation = 50 + (Math.abs(hash) % 20); // saturation between 50% and 70%
-	const lightness = 30 + (Math.abs(hash) % 10);  // lightness between 30% and 40%
+ 
+	const hue = Math.abs(hash) % 360;            
+	const saturation = 50 + (Math.abs(hash) % 20);  
+	const lightness = 30 + (Math.abs(hash) % 10);   
   
 	return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
   }
