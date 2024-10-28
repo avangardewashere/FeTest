@@ -2,15 +2,30 @@
 	width:390rem;
 	margin-inline:auto;
 	display:flex;
-	justify-content: space-between;
+	// justify-content: space-between;
 	flex-wrap: wrap;
-	gap:8rem 0rem;
+	gap:12rem 8rem;
 	padding-inline:15rem;
-	min-height:480rem;
+	min-height:fit-content;
 	overflow:auto;
 	background:white;
+	align-content: flex-start;
+	justify-content: flex-start;
 	 padding-block:0 10rem;
 	&::-webkit-scrollbar{
 		display:none;
+	}
+
+	.noRecord{
+		gap:20rem;
+		width: 360rem;;
+		height:400rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		img{
+			width:200rem;
+		}
 	}
 }

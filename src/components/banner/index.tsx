@@ -6,7 +6,7 @@ import { Swiper } from 'antd-mobile'
 const Banner = memo(() => {
   return (
 	<div className={style.container}>
-		<Swiper loop={true} autoplay={false} autoplayInterval={2500} indicator={false}>
+		<Swiper loop={true} autoplay={!false} autoplayInterval={2500} indicator={false}>
 			<Swiper.Item>
 				<img src={zeusImg} alt="fun-88-banner-image" />
 			</Swiper.Item>

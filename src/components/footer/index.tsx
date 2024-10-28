@@ -1,13 +1,15 @@
 import { memo, useState } from "react";
 import style from "./index.module.scss";
-import FooterTabs from "./footerTab";
+import Tabs from "./Tab";
 import sportsImg from "./../../assets/images/footer/sports.png";
 import walletImg from "./../../assets/images/footer/wallet.png";
 import diceImg from "./../../assets/images/footer/dice.png";
 import inviteImg from "./../../assets/images/footer/Invitepng.png";
 import starImg from "./../../assets/images/footer/star.png";
+import useFTStore from "../../store/ftStore";
 const Footer = memo(() => {
-	const [select, setSelect] = useState(1001);
+  const tabs = useFTStore((s) => s.tabs);
+  const setTab = useFTStore((s) => s.setTab);
   const FooterTabsData = [
     {
       tabName: "Sports",
@@ -36,10 +38,23 @@ const Footer = memo(() => {
     },
   ];
 
+  const handleTabClick = (iconId: number) => {
+    setTimeout(() => {
+      setTab(iconId);
+    }, 500);
+  };
+
   return (
     <div className={style.container}>
       {FooterTabsData.map((item, index) => (
-        <FooterTabs select={select} setSelect={()=>setSelect(item.iconId)} iconId={item.iconId} imgSrc={item.img} key={index} tabName={item.tabName} />
+        <Tabs
+          select={tabs}
+          setSelect={() => handleTabClick(item.iconId)}
+          iconId={item.iconId}
+          imgSrc={item.img}
+          key={index}
+          tabName={item.tabName}
+        />
       ))}
     </div>
   );

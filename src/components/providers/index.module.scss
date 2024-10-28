@@ -24,7 +24,7 @@
 		font-weight: 400;
 		
 	}
-	span:last-child{
+	span:nth-child(3){
 		width: 36rem;;
 		border-radius: 12rem;
 		border:white solid .5rem;
@@ -42,12 +42,16 @@
 }
 
 .list{
-	height:532rem;
+	height:330rem;
 	padding:12rem;
+	overflow-y: auto;
 	display: flex;
 	justify-content: flex-start;
 	flex-wrap: wrap;
 	align-items: flex-start;
 	align-content: flex-start;
 	gap:10rem 14rem;
+	&::-webkit-scrollbar{
+	 display:none;
+	}
 }

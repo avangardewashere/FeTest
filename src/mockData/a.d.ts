@@ -20,3 +20,6 @@ export interface Game {
 	jackpotOpen: number;
 	extraParam: undefined| null;
  }
+
+ export interface providersType{
+	 firmName: string, firmImage: string, gameCount: number }

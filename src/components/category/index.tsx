@@ -1,6 +1,6 @@
 import { memo } from "react";
 import style from "./index.module.scss";
-import FooterTabs from "../footer/footerTab";
+import Tabs from "../footer/Tab";
 import start from "./../../assets/images/categories/start.png";
 import others from "./../../assets/images/categories/others.png";
 import table from "./../../assets/images/categories/table.png";
@@ -15,8 +15,11 @@ import jackpot from "./../../assets/images/categories/jackpot.png";
 import useFTStore from "../../store/ftStore";
 const Category = memo(() => {
   const setPopupProviders = useFTStore((s) => s.setPopupProviders);
-  const category = useFTStore(s=>s.category)
-  const setCategory = useFTStore(s=>s.setCategory)
+  const searchByProvider = useFTStore((s) => s.searchByProvider);
+  const category = useFTStore((s) => s.category);
+  const setCategory = useFTStore((s) => s.setCategory);
+  const searchValue = useFTStore((s) => s.searchValue);
+  const keyword = useFTStore(s=>s.keyword)
   const CategoryData = [
     {
       iconid: 101,
@@ -40,7 +43,7 @@ const Category = memo(() => {
     },
     {
       iconid: 105,
-      tabName: "jackpot",
+      tabName: "Jackpot",
       imgSrc: jackpot,
     },
     {
@@ -59,36 +62,63 @@ const Category = memo(() => {
       imgSrc: others,
     },
   ];
+
   return (
     <>
       <div className={style.container}>
-        <div className={style.search} onClick={()=>{setCategory(100)}}>
-          <img style={{filter:category === 100 ? "":"grayscale(100%)"}} src={search} alt="fun-88-search-image" />
-          <span style={{color:category === 100 ? "#0a88ff" : "#888"}}>Search</span>
+        <div
+          className={style.search}
+          onClick={() => {
+            setCategory("search");
+            searchValue("")
+          }}
+        >
+          <img
+            style={{ filter: category === "search" ? "" : "grayscale(100%)" }}
+            src={search}
+            alt="fun-88-search-image"
+          />
+          <span style={{ color: category === "search" ? "#0a88ff" : "#888" }}>
+            Search
+          </span>
         </div>
         <div className={style.categories}>
           {CategoryData.map((item, index) => (
-            <FooterTabs
+            <Tabs
               iconId={item.iconid}
               imgSrc={item.imgSrc}
               width={50}
               key={index}
-			  select={category}
-			  setSelect={()=>{setCategory(item.iconid)}}
+              select={category}
+              setSelect={() => {
+                setCategory(item.tabName.toLowerCase()), searchValue("");
+                searchByProvider("")
+              }}
               tabName={item.tabName}
             />
           ))}
         </div>
       </div>
-      <div className={style.searchBar} style={{height:category ===100 ?"":"0rem" ,opacity:category === 100 ? 1:0,marginBlock:category===100 ?"10rem" :"" }}>
+      <div
+        className={style.searchBar}
+        style={{
+          height: category === "search" ? "" : "0rem",
+          opacity: category === "search" ? 1 : 0,
+          marginBlock: category === "search" ? "10rem" : "",
+        }}
+      >
         <div className={style.searchInput}>
           <img src={search} style={{ width: "16rem" }} alt="search-icon" />
-          <input type="text" />
+          <input
+            placeholder="Enter game name"
+            type="text"
+            value={keyword}
+            onChange={(e) => searchValue(e.target.value)}
+          />
         </div>
         <div
           className={style.providers}
           onClick={() => {
-            
             setPopupProviders();
           }}
         >

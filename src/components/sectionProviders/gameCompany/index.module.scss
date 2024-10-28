@@ -8,13 +8,16 @@
 	border-radius: 6rem;
 	border-bottom-left-radius:0 ;
 	border-bottom-right-radius:0 ;
-
+   img{
+	width: 80rem;;
+   }
 }
 
 .name{
 	height:36rem;
 	background: #88888810;
 	display:flex;
+	color:#222;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;

@@ -1,11 +1,24 @@
-import {memo}from 'react'
-import style from "./index.module.scss"
-const CompanyItem = memo(() => {
-  return (
-	<div className={style.company}>
-		sample
-	</div>
-  )
-})
+import { memo } from "react";
+import style from "./index.module.scss";
 
-export default CompanyItem
+interface CompanyItemProps {
+  imgSrc?: string;
+  firm: string;
+  handleClick: (name: string) => void;
+  name: string;
+}
+
+const CompanyItem = memo((props: CompanyItemProps) => {
+  const { imgSrc, handleClick, firm, name } = props;
+  return (
+    <div
+      style={{ background: firm === name ? "#0a88ff20" : "" }}
+      className={style.company}
+      onClick={() => handleClick(name)}
+    >
+      <img src={imgSrc || ""} alt="fun-88-company-providers" />
+    </div>
+  );
+});
+
+export default CompanyItem;

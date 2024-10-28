@@ -5,15 +5,15 @@ interface FooterTabsProps {
   tabName?: string;
   imgSrc?: string;
   iconId?: number;
-  select?: number;
+  select?: number |string;
   setSelect?: (id: number) => void;
   width?:number;
 }
-const FooterTabs = memo(
+const Tabs = memo(
   ({ iconId, tabName, imgSrc, select, width,setSelect }: FooterTabsProps) => {
     return (
       <div
-        style={{ color: select === iconId ? "#00A6FF" : "#888",width:width?width:"78rem" }}
+        style={{ color: select === iconId || select === tabName?.toLowerCase() ? "#00A6FF" : "#888",width:width?width:"78rem" }}
         className={style.tabs}
         onClick={() => {
           if (setSelect) setSelect(iconId || 1001);
@@ -28,7 +28,7 @@ const FooterTabs = memo(
             }}
           >
             <img
-              style={{ filter: select === iconId ? "" : "grayscale(100%)" }}
+              style={{ filter: select === iconId || select === tabName?.toLowerCase() ? "" : "grayscale(100%)" }}
               src={imgSrc}
               alt="fun-88-footer-image"
               className={`${style.image} ${width === 50 ? style.girl : ""}`}
@@ -43,4 +43,4 @@ const FooterTabs = memo(
   }
 );
 
-export default FooterTabs;
+export default  Tabs;

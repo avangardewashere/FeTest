@@ -17,6 +17,25 @@
 		font-weight: 600;
 		color:#888;
 		margin-block:10rem;
+		position: relative;
+
+		.buttons{
+			position: absolute;
+			right:10rem;
+			top:0;
+			display:flex;
+			align-items: center;
+			justify-content: center;
+			gap:14rem;
+			img{
+				width:17rem;
+				height:20rem;
+			}
+			img:first-child{
+				
+				transform: scaleX(-1);
+			}
+		}
 	}
 	.groups{
 		display:flex;
