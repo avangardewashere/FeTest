@@ -1,4 +1,4 @@
-import { memo, useState } from "react";
+import { memo } from "react";
 import style from "./index.module.scss";
 import Tabs from "./Tab";
 import sportsImg from "./../../assets/images/footer/sports.png";
